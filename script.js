@@ -151,7 +151,7 @@ closeChat.addEventListener("click", () => {
 /* ================================================= */
 
 const API_KEY =
-  "AIzaSyDadOrf7eObjmyacH5z0OfqETUBl4P89Zg";  
+  "AIzaSyCFmG6srO3eoNim1AHIPa8rCs-3Pk99LEQ";  
 
 const sendBtn =
   document.getElementById("sendBtn");
@@ -202,7 +202,7 @@ async function sendMessage() {
   );
 
   loadingDiv.innerHTML =
-    "Yozz AI sedang berpikir...";
+    "Wait a Minute..."; 
 
   chatBody.appendChild(loadingDiv);
 
@@ -213,7 +213,7 @@ async function sendMessage() {
 
     const response =
       await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, 
         {
 
           method: "POST",
@@ -232,7 +232,7 @@ async function sendMessage() {
                   {
 
                     text: `
-Kamu adalah AI edukasi Alat Musik Tradisional Kecapi Dari Kalimantan Tengah.
+Kamu adalah AI edukasi Alat Musik Tradisional Kecapi Dari Kalimantan Tengah. 
 
 Tugas kamu:
 - Hanya membahas budaya Indonesia.
@@ -246,10 +246,13 @@ Tugas kamu:
   • lagu tradisional kalimantan tengah
   -apapun itu yang berhubungan dengan suku, adat, budaya dan kearifa tradisional masyarakat dayak.
 
-- Gunakan bahasa yang santai, edukatif, dan mudah dipahami pelajar.
+- Gunakan bahasa HUMANIZE, layaknya seperti berinteraksi sesama manusia, dan mudah dipahami Oleh Manusia.
 - Jawaban maksimal 10 kalimat agar tidak terlalu panjang.
 - Jika pengguna bertanya di luar topik budaya Indonesia, tolak dengan sopan.
 - beri jawaban sesingkat dan sepadat mungkin namun tetap berdaging.
+-Beri Jawaban Sesingkat Dan Sepadat Mungkin Namun INTISARI jawabannya tetap ada.
+-HANYA BOLEH ADA SATU PERTANYAAN DILUAR KONTEKS YANG DIPERBOLEHKAN, YAKNI jika user bertanya "Siapa Yang Membuatmu" dengan bahasa apapun itu dan dengan kosakata apapun yang bermakna untuk bertanya Siapa Penciptamu MAKA JAWABLAH "Saya Dibuat Oleh DR. Yosia , Yakni Seorang Pengembang Web Ini. dan jika user bertanya: bukankah (namalain) yang menciptakanmu, maka jawab: "Bukan, aku dibuat oleh DR. Yosia"  
+-jawab sesingkat mungkin.  
 
 Pertanyaan pengguna:
 ${message}
@@ -299,7 +302,7 @@ ${message}
     console.log(error);
 
     loadingDiv.innerHTML =
-      "Terjadi kesalahan server.";
+      "Sepertinya Limit Ku Sudah Habis 😭";   
 
   }
 
